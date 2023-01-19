@@ -1,0 +1,29 @@
+if($_POST["submit"]=="login"){
+
+$usrName=$_POST["usrName"];
+
+$usrPwd=$_POST["usrPwd"];
+
+$sql = "SELECT * FROM tableName WHERE UserName='".$usrName."' and Password='".$usrPwd."'";
+
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+
+echo '<script>
+
+window.location="welcomePagel.php";
+
+</script>';
+
+} else {
+
+echo '<script>
+
+alert(“Wrong user name or password”);
+
+</script>';
+
+}
+
+}
